@@ -61,6 +61,9 @@ The JavaScript file is compatible with Zen Cart versions 1.5.x through 2.2.0.
 It is **NOT** compatible with any version of the Internet Explorer (IE) browser and may have problems with other browsers not updated since 2010.
 
 ## Helpful Notes:
+
+The Zen Cart support thread is located [here](https://www.zen-cart.com/showthread.php/231009-Support-Thread-for-Product-Description-Pop-Ups?p=1410429#post1410429).
+
 1. **All** links to images require an alt tag to meet accessibility and HTML standards.
 2. Adding an alt tag to an anchor or hyperlink (second and third example above) is actually an HTML violation.
 3. To avoid confusion with certain operating systems, images should generally start with lowercase, end with the extension in lowercase, and not have any spaces in the filename.
