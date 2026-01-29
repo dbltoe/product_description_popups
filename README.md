@@ -55,6 +55,11 @@ Copy the includes/templates/YOUR_TEMPLATE/jscript/jscript_popup.js to your site.
 <a class="image-popup" href="/index.php?main_page=index&cPath=9_127">
 ```
 
+## Compatibility.
+
+The JavaScript file is compatible with Zen Cart versions 1.5.x through 2.2.0.
+It is **NOT** compatible with any version of the Internet Explorer (IE) browser and may have problems with other browsers not updated since 2010.
+
 ## Helpful Notes:
 1. **All** links to images require an alt tag to meet accessibility and HTML standards.
 2. Adding an alt tag to an anchor or hyperlink (second and third example above) is actually an HTML violation.
