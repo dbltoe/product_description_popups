@@ -1,5 +1,5 @@
 # product_description_popups
-Allows a shop owner to include a pop-up image in a product description
+Allows a shop owner to include a pop-up image in a product description. Use in other editable areas is possible, as well. It works in the Defines Pages Editor as well.
 ## How We Got Here
 Older versions of Zen Cart used a version CKEditolr when setting the product description for a category or product. One of the nicest features was that it allowed the user to turn a link into a popup window. When the user highlighted a particular piece of text and then clicked on the link icon, the Link Info tab allowed the setting of Display Text, Link Type (URL, Link to an anchor in the text, E-Mail, or Phone), Protocol (http://, https://, news://, or <other>), and the URL block to enter what you wanted linked.
 The Link Type for a popup was selected as URL, and the Protocol selected as <other>. Then, the URL was entered in the URL field.
