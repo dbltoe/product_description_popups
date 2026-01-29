@@ -49,11 +49,11 @@ Copy the includes/templates/YOUR_TEMPLATE/jscript/jscript_popup.js to your site.
 
 ### Examples.
 A pop-up size chart to help with size selection.
-```<a class="image-popup" href="/images/large/CNF-7100-0302E_LRG.jpg" alt="T-Shirt Size Chart">```
+`<a class="image-popup" href="/images/large/CNF-7100-0302E_LRG.jpg" alt="T-Shirt Size Chart">`
 A pop-up catalog of available styles.
-```<a class="image-popup" href="/documents/t-shirt_catalog.pdf">```
+`<a class="image-popup" href="/documents/t-shirt_catalog.pdf">`
 A link to pop-up the main clothing page.
-```<a class="image-popup" href="/index.php?main_page=index&cPath=9_127">```
+`<a class="image-popup" href="/index.php?main_page=index&cPath=9_127">`
 
 ## Helpful Notes:
 1. **All** links to images require an alt tag to meet accessibility and HTML standards.
