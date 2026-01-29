@@ -48,9 +48,9 @@ When the system sees the new class, the JavaScript file will open a pop-up on th
 Copy the includes/templates/YOUR_TEMPLATE/jscript/jscript_popup.js to your site. Once the file is installed, a pop-up can be initiated by adding the class="image-popup" to the link for the image, page, PDF, etc.
 
 ### Examples.
-```<a class="image-popup" href="/images/large/CNF-7100-0302E_LRG.jpg" alt="T-Shirt Size Chart"> - A pop-up size chart to help with size selection.
-<a class="image-popup" href="/documents/t-shirt_catalog.pdf"> - A pop-up catalog of available styles.
-<a class="image-popup" href="/index.php?main_page=index&cPath=9_127"> A link to pop-up the main clothing page.```
+```<a class="image-popup" href="/images/large/CNF-7100-0302E_LRG.jpg" alt="T-Shirt Size Chart">``` - A pop-up size chart to help with size selection.
+```<a class="image-popup" href="/documents/t-shirt_catalog.pdf">``` - A pop-up catalog of available styles.
+```<a class="image-popup" href="/index.php?main_page=index&cPath=9_127">``` A link to pop-up the main clothing page.
 
 ## Helpful Notes:
 1. **All** links to images require an alt tag to meet accessibility and HTML standards.
