@@ -43,8 +43,11 @@ return [
         . $pdpLinks,
     // plugin_control.author is varchar(64).
     'pluginAuthor' => 'My Zen Cart Host (dbltoe)',
-    // Not in the Zen Cart Plugins Library yet; set to its ID once the listing is accepted.
-    'pluginId' => 0,
+    // ID from the Zen Cart Plugins Library -- the number after "vb" in
+    // https://www.zen-cart.com/plugins/product-description-pop-up-vb2427
+    // On 1.5.8/2.0/2.1 it is stored only when Plugin Manager first sees the plugin,
+    // so it has to be right in the first encapsulated release.
+    'pluginId' => 2427,
     'zcVersions' => ['v158', 'v200', 'v210', 'v220', 'v230', 'v300'],
     'changelog' => 'changelog.txt',
     'github_repo' => $pdpGithubUrl,
