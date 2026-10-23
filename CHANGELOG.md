@@ -1,0 +1,18 @@
+# Changelog
+
+## v2.0.0 (2026-10-23)
+
+- Now a Zen Cart plugin (`zc_plugins`), installed from **Modules > Plugin Manager**. Zen Cart 1.5.8 through 3.0.0, PHP 7.4 through 8.5.
+- Puts an **Open in Pop-Up Window** choice back in the editor's link dialog: a switch in CKEditor 5 (Zen Cart 2.1+) and a Class list entry in TinyMCE (2.2+). CKEditor 4 (1.5.8, 2.0) keeps its own Target tab pop-up choice. Offered on the product, category, define page, EZ-Page and banner editors only. No core files are changed.
+- PDFs and pages now open in the pop-up window; before, they showed a broken image.
+- Works for links that appear after the page has loaded (tabs, quick views).
+- A blocked pop-up opens the link normally instead of showing an alert.
+- Ctrl/Cmd/Shift/Alt-click and middle-click are left to the browser.
+- The window's alt text and title come from the link, not "Product Image".
+- Window placement uses the screen's available area (availLeft/availWidth) instead of screen.width, so it no longer assumes the main monitor.
+- Escape closes an image window.
+- No `document.write()` or inline script in the window, so a Content-Security-Policy doesn't block it.
+
+## v1 (2026-01-29, tag PDP_1)
+
+- `jscript_popup.js` for the template's jscript folder; `class="image-popup"` added by hand.

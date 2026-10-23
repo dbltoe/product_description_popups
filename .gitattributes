@@ -1,0 +1,8 @@
+# LF everywhere, so a Windows checkout can't hand a store a file that differs
+# byte-for-byte from the one that was tested.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.gif binary
+*.webp binary
+*.zip binary

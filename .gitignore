@@ -1,0 +1,14 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# Build output and packages
+dist/
+*.zip
+
+# Maintainer tooling, kept local and never shipped
+tests/
+tools/

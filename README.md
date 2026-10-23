@@ -1,72 +1,41 @@
-# product_description_popups
-Allows a shop owner to include a pop-up image in a product description. It works in the Defines Pages Editor as well and may work any time the included editors are used to create text.
-## How We Got Here
-Older versions of Zen Cart used a version CKEditolr when setting the product description for a category or product. One of the nicest features was that it allowed the user to turn a link into a popup window. When the user highlighted a particular piece of text and then clicked on the link icon, the Link Info tab allowed the setting of Display Text, Link Type (URL, Link to an anchor in the text, E-Mail, or Phone), Protocol (http://, https://, news://, or <other>), and the URL block to enter what you wanted linked.
-The Link Type for a popup was selected as URL, and the Protocol selected as <other>. Then, the URL was entered in the URL field.
-Then, when clicking on the Target Tab, the user was provided with options to select the type of Target (<not set>, <frame>, <popup window>,._blank, _top, _self, and _parent). The other fields that appeared were dependent upon the selection of the Target.
-For example, if the user selected <popup window>, the Popup Window Name and Popup Window Features fields appeared on the form.
-Popup Window Features section of the Target tab contained several options that could be checked or amounts filled in.
-Check boxes were:
-Resizable
-Status Bar
-Location Bar
-Toolbar
-Menu Bar
-Full Screen (IE)
-Scroll Bars
-Dependent (Netscape).
-The numerical fields in the Popup Window Features portion of the Target tab were:
-Width
-Height
-Left Position
-Top Position
+# Product Description Pop-Ups
 
-If an owner simply wanted to have an image of a size chart pop up at 420px x 420px, the editor created a link that looked like:
+Brings back the editor's "open this link in a pop-up window" choice that went away with CKEditor 4, for the links you pick.
 
-```<a href="/images/large/size_chart.jpg" alt="T-Shirt Size Chart" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no,width=420,height=420'); return false;">```
+Version 2.0.0 · Zen Cart 1.5.8 - 3.0.0 · PHP 7.4 - 8.5 · GPL-2.0 · by My Zen Cart Host (dbltoe)
 
-It was used to bring up an image, another site, a PDF, etc. With the evolution of Zen Cart and its current editors (TinyMCE and CKeditor), this feature is no longer available. The storeowner only has the option of _blank or _parent.
+## Why It Exists
 
-## Why the Change?
-The use of onclick is now not only out of the editor, but if you are updating from a 1.5.# or earlier version of Zen Cart to a newer version, your onclick code will be stripped from the database entirely.
+Zen Cart 1.5.8 and 2.0 use CKEditor 4. Its link dialog's **Target** tab offers *&lt;popup window&gt;*, so one link, say a size chart in a T-shirt's description, could open in a small window beside the product page.
 
-The code above is sanitized to become.
+Zen Cart 2.1 moved to CKEditor 5, and 2.2 made TinyMCE the default editor. Neither has that choice, and both strip the `onclick` code CKEditor 4 wrote the next time that description is saved in them. CKEditor 5 also strips any `class` typed on a link.
 
-```<a href="/images/large/CNF-7100-0302E_LRG.jpg" alt="T-Shirt Size Chart">```
+## What It Does
 
-By default, attributes like onclick are stripped because they can execute JavaScript, which poses potential XSS risks. This happens during editing and saving, as the editor validates and cleans the HTML. And, experience has shown that editing one product can cause the system to sanitize the entire products_description table.
+- **Admin:** adds **Open in Pop-Up Window** to the CKEditor 5 and TinyMCE link dialogs on the product, category, define page, EZ-Page and banner editors. Choosing it gives that one link `class="image-popup"`, which both editors keep.
+- **Storefront:** a click on a marked link opens a small window. An image opens sized to the picture (up to 85% of the screen); a PDF or page opens as it is. Every other link is left alone.
+- No core files are changed, and there's nothing to configure.
 
-## What the Mod Does.
-By installing the includes/templates/YOUR_TEMPLATE/jscript/jscript_popup.js, you enable a popup method that allows you to change the link to add a class for the popup:
+## Installing
 
-```<a class="image-popup" href="/images/large/CNF-7100-0302E_LRG.jpg" alt="T-Shirt Size Chart">```
+1. Upload `zc_plugins/ProductDescriptionPopup` to your store's `zc_plugins/` folder.
+2. In **Modules > Plugin Manager**, select **Product Description Pop-Ups** and click **Install**.
 
-When the system sees the new class, the JavaScript file will open a pop-up on the current page. The script is designed to open any size window with the image fully included. It is set to expect 500x500, but if the image is large, it's presented in a smaller version with scroll bars that allow the user to adjust the view as needed. You can adjust settings in the file for the position on the screen.
+**Upgrading from v1:** delete `includes/templates/YOUR_TEMPLATE/jscript/jscript_popup.js` from every template you copied it into. Links already marked with `class="image-popup"` keep working.
 
-## How to Install/Use.
+## Marking a Link
 
-Copy the includes/templates/YOUR_TEMPLATE/jscript/jscript_popup.js to your site. Once the file is installed, a pop-up can be initiated by adding the class="image-popup" to the link for the image, page, PDF, etc.
+| Editor | What to do |
+|---|---|
+| CKEditor 5 (Zen Cart 2.1+) | In the link box, turn on **Open in Pop-Up Window**. |
+| TinyMCE (Zen Cart 2.2+) | In the link dialog, choose **Open in Pop-Up Window** from the **Class** list. |
+| CKEditor 4 (1.5.8, 2.0) | Use the **Target** tab's *&lt;popup window&gt;*, as before. |
+| Plain text | Type it yourself: `<a class="image-popup" href="/images/large/size_chart.jpg">Size chart</a>` |
 
-### Examples.
+The full guide, including how to change where the window opens, is in `readme.html` (also in Plugin Manager's **Read Me** button).
 
-```
-<a class="image-popup" href="/images/large/CNF-7100-0302E_LRG.jpg" alt="T-Shirt Size Chart">
-<a class="image-popup" href="/documents/t-shirt_catalog.pdf">
-<a class="image-popup" href="/index.php?main_page=index&cPath=9_127">
-```
+## Support
 
-## Compatibility.
+[Zen Cart forum support thread](https://www.zen-cart.com/showthread.php/231009-Support-Thread-for-Product-Description-Pop-Ups?p=1410429#post1410429) · [GitHub issues](https://github.com/dbltoe/product_description_popups/issues)
 
-The JavaScript file is compatible with Zen Cart versions 1.5.x through 2.2.0.
-It is **NOT** compatible with any version of the Internet Explorer (IE) browser and may have problems with other browsers not updated since 2010.
-
-## Helpful Notes:
-
-The Zen Cart support thread is located [here](https://www.zen-cart.com/showthread.php/231009-Support-Thread-for-Product-Description-Pop-Ups?p=1410429#post1410429).
-
-1. **All** links to images require an alt tag to meet accessibility and HTML standards.
-2. Adding an alt tag to an anchor or hyperlink (second and third example above) is actually an HTML violation.
-3. To avoid confusion with certain operating systems, images should generally start with lowercase, end with the extension in lowercase, and not have any spaces in the filename.
-
-## Was This Mod Helpful?
-[Donate to the Zen Cart Project](https://www.zen-cart.com/content.php/6-donate)
+Was this plugin helpful? [Donate to the Zen Cart Project](https://www.zen-cart.com/content.php/6-donate)

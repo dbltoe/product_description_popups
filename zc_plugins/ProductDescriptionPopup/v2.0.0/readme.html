@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Description Pop-Ups &mdash; Read Me</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#57606a; --rule:#d8dee4;
+  --panel:#f6f8fa; --accent:#0969da; --warn-bg:#fff8c5; --warn-br:#d4a72c;
+  --code-bg:#f0f2f4;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --rule:#30363d;
+    --panel:#161b22; --accent:#4493f8; --warn-bg:#2d2200; --warn-br:#9e6a03;
+    --code-bg:#161b22;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:52rem;margin:0 auto;padding:2rem 1.25rem 5rem}
+header{border-bottom:1px solid var(--rule);padding-bottom:1.25rem;margin-bottom:1.5rem}
+h1{font-size:1.75rem;margin:0 0 .3rem}
+.tagline{color:var(--muted);margin:0}
+.meta{color:var(--muted);font-size:.875rem;margin:.75rem 0 0}
+.meta a{color:var(--accent)}
+h2{font-size:1.25rem;margin:2.5rem 0 .75rem;padding-top:1.25rem;border-top:1px solid var(--rule)}
+h3{font-size:1.02rem;margin:1.75rem 0 .5rem}
+p,ul,ol{margin:0 0 1rem}
+ul,ol{padding-left:1.4rem}
+li{margin:.3rem 0}
+a{color:var(--accent)}
+code{background:var(--code-bg);padding:.12em .38em;border-radius:4px;
+     font:.87em/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+pre{background:var(--panel);border:1px solid var(--rule);border-radius:6px;
+    padding:.85rem 1rem;overflow-x:auto;margin:0 0 1rem}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:0 0 1.25rem;font-size:.94rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--rule);padding:.45rem .65rem;text-align:left;vertical-align:top}
+th{background:var(--panel);white-space:nowrap}
+.note{background:var(--panel);border-left:4px solid var(--accent);
+      border-radius:0 6px 6px 0;padding:.8rem 1rem;margin:0 0 1.25rem}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn-br);
+      border-radius:0 6px 6px 0;padding:.8rem 1rem;margin:0 0 1.25rem}
+.note p:last-child,.warn p:last-child{margin-bottom:0}
+nav{background:var(--panel);border:1px solid var(--rule);border-radius:6px;
+    padding:.9rem 1rem;margin:0 0 1.5rem}
+nav p{margin:0 0 .4rem;font-weight:600;font-size:.9rem}
+nav ul{margin:0;padding-left:1.2rem;columns:2;column-gap:2rem}
+nav li{margin:.15rem 0;font-size:.92rem;break-inside:avoid}
+footer{margin-top:3rem;padding-top:1.25rem;border-top:1px solid var(--rule);
+       color:var(--muted);font-size:.875rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Product Description Pop-Ups</h1>
+  <p class="tagline">Brings back the editor's &ldquo;open this link in a pop-up window&rdquo; choice that went away with CKEditor 4, for the links you pick.</p>
+  <p class="meta">
+    By My Zen Cart Host (dbltoe) &nbsp;&middot;&nbsp;
+    Version 2.0.0 &nbsp;&middot;&nbsp; Zen Cart v1.5.8 &ndash; v3.0.0 &nbsp;&middot;&nbsp; PHP 7.4 &ndash; 8.5 &nbsp;&middot;&nbsp;
+    GPL-2.0 &nbsp;&middot;&nbsp;
+    <a href="https://github.com/dbltoe/product_description_popups" target="_blank" rel="noopener noreferrer">github.com/dbltoe/product_description_popups</a>
+  </p>
+</header>
+
+<nav>
+  <p>On this page</p>
+  <ul>
+    <li><a href="#why">Why it exists</a></li>
+    <li><a href="#what">What it does</a></li>
+    <li><a href="#install">Installing</a></li>
+    <li><a href="#upgrade">Upgrading from v1</a></li>
+    <li><a href="#use">Marking a link</a></li>
+    <li><a href="#settings">Changing where the window opens</a></li>
+    <li><a href="#compat">Compatibility</a></li>
+    <li><a href="#notes">Helpful notes</a></li>
+    <li><a href="#uninstall">Uninstalling</a></li>
+    <li><a href="#support">Support</a></li>
+  </ul>
+</nav>
+
+<h2 id="why">Why it exists</h2>
+<p>Zen Cart 1.5.8 and 2.0 use CKEditor 4. In its link dialog, the <strong>Target</strong> tab offers <em>&lt;popup window&gt;</em>, with a size and position. A store owner could make one link, say a size chart in a T-shirt's description, open in a small window beside the product page.</p>
+<p>Zen Cart 2.1 moved to CKEditor 5, and 2.2 made TinyMCE the default editor. Neither has that choice. Both also strip the <code>onclick</code> code that CKEditor 4 wrote, the next time that description is saved in them, so the old pop-up links turn into ordinary links. CKEditor 5 also strips any <code>class</code> you type on a link.</p>
+<p>This plugin puts the choice back.</p>
+
+<h2 id="what">What it does</h2>
+<ul>
+  <li><strong>In the admin:</strong> adds <strong>Open in Pop-Up Window</strong> to the link dialog of CKEditor 5 and TinyMCE, on the product, category, define page, EZ-Page and banner editors. Choosing it gives that one link <code>class="image-popup"</code>, and both editors keep it.</li>
+  <li><strong>On the storefront:</strong> when a shopper clicks a link marked that way:
+    <ul>
+      <li>an image (<code>.jpg</code>, <code>.png</code>, <code>.webp</code> and so on) opens in a window sized to the picture, up to 85% of the screen, on a dark background, toward the right of the screen. <kbd>Esc</kbd> closes it;</li>
+      <li>anything else, such as a PDF or another page, opens in the window as it is.</li>
+    </ul>
+  </li>
+  <li>Every other link is left alone. Ctrl-, Cmd-, Shift- and middle-clicks still do what the browser normally does. If the browser blocks the window, the link opens like an ordinary link.</li>
+  <li>No core files are changed, and there's nothing to configure.</li>
+</ul>
+
+<h2 id="install">Installing</h2>
+<ol>
+  <li>Upload the <code>zc_plugins/ProductDescriptionPopup</code> folder to your store's <code>zc_plugins/</code> folder.</li>
+  <li>In the admin, go to <strong>Modules &gt; Plugin Manager</strong>, select <strong>Product Description Pop-Ups</strong> and click <strong>Install</strong>.</li>
+</ol>
+<p>That's all. There are no settings and no database tables.</p>
+
+<h2 id="upgrade">Upgrading from v1</h2>
+<p>Version 1 was a single file, <code>includes/templates/YOUR_TEMPLATE/jscript/jscript_popup.js</code>. <strong>Delete that file</strong> from every template you copied it into, then install this plugin.</p>
+<p>Leaving it in place does no harm (the two never open two windows for one click), but the old file's handling wins on the links it sees, and it can't open PDFs or pages.</p>
+<p>Links you already marked with <code>class="image-popup"</code> keep working without any change.</p>
+
+<h2 id="use">Marking a link</h2>
+<table>
+  <thead><tr><th>Editor</th><th>What to do</th></tr></thead>
+  <tbody>
+    <tr><td>CKEditor 5<br>(Zen Cart 2.1+)</td><td>Select the text, click the link button, enter the address, and turn on the <strong>Open in Pop-Up Window</strong> switch.</td></tr>
+    <tr><td>TinyMCE<br>(Zen Cart 2.2+)</td><td>Select the text, click the link button, enter the address, and choose <strong>Open in Pop-Up Window</strong> from the <strong>Class</strong> list.</td></tr>
+    <tr><td>CKEditor 4<br>(Zen Cart 1.5.8, 2.0)</td><td>Use the link dialog's <strong>Target</strong> tab and choose <em>&lt;popup window&gt;</em>, as before. Those links open on their own; this plugin doesn't need to do anything for them.</td></tr>
+    <tr><td>Plain text</td><td>Type the class on the link yourself, as shown below.</td></tr>
+  </tbody>
+</table>
+<pre><code>&lt;a class="image-popup" href="/images/large/size_chart.jpg"&gt;Size chart&lt;/a&gt;
+&lt;a class="image-popup" href="/documents/t-shirt_catalog.pdf"&gt;Catalog (PDF)&lt;/a&gt;
+&lt;a class="image-popup" href="/index.php?main_page=index&amp;amp;cPath=9_127"&gt;More shirts&lt;/a&gt;</code></pre>
+<div class="note">
+  <p>The image's alt text and the window's title come from the link: its <code>title</code>, the alt text of an image inside the link, or the link's own words. Give links meaningful text.</p>
+</div>
+
+<h2 id="settings">Changing where the window opens</h2>
+<p>The window opens 40 pixels from the right edge of the screen and 100 pixels from the top. To change that, copy</p>
+<pre><code>zc_plugins/ProductDescriptionPopup/v2.0.0/catalog/includes/templates/default/jscript/product_description_popup.js</code></pre>
+<p>into your template's <code>includes/templates/YOUR_TEMPLATE/jscript/</code> folder and edit the settings at the top of your copy. The plugin uses your copy when there is one. Keep the file name.</p>
+<div class="warn">
+  <p>When you install a later version of the plugin, compare your copy with the new one; your copy is used in its place.</p>
+</div>
+
+<h2 id="compat">Compatibility</h2>
+<ul>
+  <li>Zen Cart 1.5.8 through 3.0.0; PHP 7.4 through 8.5.</li>
+  <li>Any storefront template, including ZCA Bootstrap.</li>
+  <li>Editors: Zen Cart's own CKEditor (4 or 5) and TinyMCE. Another editor plugin is left alone; mark links in it with the class by hand.</li>
+  <li>Your own <code>editors/ckeditor5/config.js</code> or <code>editors/tinymce/config.js</code> settings are kept. If you've set your own link decorators or Class list, the pop-up choice is added to them.</li>
+  <li>Current browsers. Not Internet Explorer.</li>
+  <li>On phones and tablets, browsers open the &ldquo;window&rdquo; as a new tab.</li>
+</ul>
+
+<h2 id="notes">Helpful notes</h2>
+<ol>
+  <li>Every image on your pages needs an <code>alt</code> attribute. A link (<code>&lt;a&gt;</code>) doesn't take one; use <code>title</code> or clear link text instead.</li>
+  <li>Image file names are safest in lowercase, with a lowercase extension and no spaces.</li>
+</ol>
+
+<h2 id="uninstall">Uninstalling</h2>
+<p>In <strong>Modules &gt; Plugin Manager</strong>, select the plugin and click <strong>Uninstall</strong>. Your descriptions are untouched; links you marked simply become ordinary links again until the plugin is reinstalled.</p>
+
+<h2 id="support">Support</h2>
+<p>Ask in the <a href="https://www.zen-cart.com/showthread.php/231009-Support-Thread-for-Product-Description-Pop-Ups?p=1410429#post1410429" target="_blank" rel="noopener noreferrer">Zen Cart forum support thread</a>, or open an issue on <a href="https://github.com/dbltoe/product_description_popups" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+<p>Was this plugin helpful? <a href="https://www.zen-cart.com/content.php/6-donate" target="_blank" rel="noopener noreferrer">Donate to the Zen Cart Project</a>.</p>
+
+<footer>
+  Product Description Pop-Ups v2.0.0 &middot; Copyright &copy; 2026 My Zen Cart Host (dbltoe) &middot; Released under the GNU General Public License v2.0.
+</footer>
+
+</div>
+</body>
+</html>
