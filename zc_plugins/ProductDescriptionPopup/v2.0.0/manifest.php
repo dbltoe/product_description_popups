@@ -14,7 +14,7 @@ $pdpPluginDir = 'zc_plugins/ProductDescriptionPopup/v2.0.0/';
 $pdpReadmeUrl = (defined('DIR_WS_CATALOG') ? DIR_WS_CATALOG : '/') . $pdpPluginDir . 'readme.html';
 $pdpGithubUrl = 'https://github.com/dbltoe/product_description_popups';
 // Permalink to the support thread's opening post.
-$pdpForumUrl = 'https://www.zen-cart.com/showthread.php/231009-Support-Thread-for-Product-Description-Pop-Ups?p=1410429#post1410429';
+$pdpForumUrl = 'https://www.zen-cart.com/threads/207083?page=1#post-1344943';
 
 $pdpButtonGap = '6px';
 $pdpLinks =

@@ -36,6 +36,6 @@ The full guide, including how to change where the window opens, is in `readme.ht
 
 ## Support
 
-[Zen Cart forum support thread](https://www.zen-cart.com/showthread.php/231009-Support-Thread-for-Product-Description-Pop-Ups?p=1410429#post1410429) · [GitHub issues](https://github.com/dbltoe/product_description_popups/issues)
+[Zen Cart forum support thread](https://www.zen-cart.com/threads/207083?page=1#post-1344943) · [GitHub issues](https://github.com/dbltoe/product_description_popups/issues)
 
 Was this plugin helpful? [Donate to the Zen Cart Project](https://www.zen-cart.com/content.php/6-donate)
