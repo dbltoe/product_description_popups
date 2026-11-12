@@ -11,7 +11,7 @@
  * already loads auto.*.php files, and a second load is a redeclare fatal).
  *
  * @package  ProductDescriptionPopup
- * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt GNU General Public License v2.0
+ * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 if (!defined('IS_ADMIN_FLAG')) {
     die('Illegal Access');

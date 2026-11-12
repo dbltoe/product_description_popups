@@ -8,10 +8,19 @@
  * from the first release.
  *
  * @package  ProductDescriptionPopup
- * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt GNU General Public License v2.0
+ * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
-$pdpPluginDir = 'zc_plugins/ProductDescriptionPopup/v2.0.0/';
-$pdpReadmeUrl = (defined('DIR_WS_CATALOG') ? DIR_WS_CATALOG : '/') . $pdpPluginDir . 'readme.html';
+// ReadMe opens README.md through the plugin's own admin page: behind the admin login,
+// superusers only, in its own window (zencart/zencart#8031). The page enforces that too,
+// because Zen Cart 1.5.8-2.1 keep the description they first saw.
+$pdpReadmeUrl = 'index.php?cmd=product_description_popup_readme';
+// Zen Cart 3.0.0 reads every manifest on every admin page, early (template resolver),
+// before admin access is set up: zen_is_superuser() there is a fatal "Undefined constant
+// SUPERUSER_PROFILE" that takes down the whole admin. Ask only once that exists.
+$pdpShowReadme = true;
+if (function_exists('zen_is_superuser') && defined('SUPERUSER_PROFILE')) {
+    $pdpShowReadme = zen_is_superuser();
+}
 $pdpGithubUrl = 'https://github.com/dbltoe/product_description_popups';
 // Permalink to the support thread's opening post.
 $pdpForumUrl = 'https://www.zen-cart.com/threads/207083?page=1#post-1344943';
@@ -19,9 +28,11 @@ $pdpForumUrl = 'https://www.zen-cart.com/threads/207083?page=1#post-1344943';
 $pdpButtonGap = '6px';
 $pdpLinks =
     '<div style="margin:10px 0 0;padding:0 0 0 ' . $pdpButtonGap . '">'
-    . '<a href="' . $pdpReadmeUrl . '" target="_blank" rel="noopener noreferrer"'
-    . ' class="btn btn-primary" role="button"'
-    . ' style="margin:0 ' . $pdpButtonGap . ' 0 0">Read Me</a>'
+    . ($pdpShowReadme
+        ? '<a href="' . $pdpReadmeUrl . '" target="_blank" rel="noopener noreferrer"'
+          . ' class="btn btn-primary" role="button"'
+          . ' style="margin:0 ' . $pdpButtonGap . ' 0 0">ReadMe</a>'
+        : '')
     . '<a href="' . $pdpGithubUrl . '" target="_blank" rel="noopener noreferrer"'
     . ' class="btn btn-primary" role="button"'
     . ' style="margin:0 ' . $pdpButtonGap . ' 0 0">GitHub</a>'
@@ -33,7 +44,7 @@ $pdpLinks =
     . '</div>';
 
 return [
-    'pluginVersion' => 'v2.0.0',
+    'pluginVersion' => 'v2.0.1',
     'pluginName' => 'Product Description Pop-Ups',
     'pluginDescription' =>
         'Brings back the editor\'s "open this link in a pop-up window" choice that went away with CKEditor 4. '

@@ -1,5 +1,5 @@
 /**
- * Product Description Pop-Ups v2.0.0
+ * Product Description Pop-Ups v2.0.1
  *
  * Opens a link in a small pop-up window when the store owner has marked that
  * one link with class="image-popup" -- the editor's "Open in Pop-Up Window"
@@ -19,7 +19,7 @@
  * settings below; the plugin then uses your copy.
  *
  * @package  ProductDescriptionPopup
- * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt GNU General Public License v2.0
+ * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 (function () {
     'use strict';
