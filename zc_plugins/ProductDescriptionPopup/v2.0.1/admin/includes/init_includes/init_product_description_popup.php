@@ -17,7 +17,7 @@
  * there) and CKEditor 5 from 2.1. Any other editor's handler is left as it is.
  *
  * @package  ProductDescriptionPopup
- * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
+ * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License v2.0
  */
 if (!defined('IS_ADMIN_FLAG')) {
     die('Illegal Access');

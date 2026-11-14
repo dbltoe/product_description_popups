@@ -19,7 +19,7 @@
  * settings below; the plugin then uses your copy.
  *
  * @package  ProductDescriptionPopup
- * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
+ * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License v2.0
  */
 (function () {
     'use strict';

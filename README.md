@@ -1,6 +1,6 @@
 # Product Description Pop-Ups
 
-Version 2.0.1 · Zen Cart 1.5.8 through 3.0.0 · PHP 7.4 through 8.5 · GPL v3 · by My Zen Cart Host (dbltoe)
+Version 2.0.1 · Zen Cart 1.5.8 through 3.0.0 · PHP 7.4 through 8.5 · GPL v2 · by My Zen Cart Host (dbltoe)
 
 Brings back the editor's "open this link in a pop-up window" choice that went away with CKEditor 4, for the links you pick.
 
@@ -101,8 +101,8 @@ Was this plugin helpful? Donate to the Zen Cart Project (https://www.zen-cart.co
 
 ## Changelog
 
-See `CHANGELOG.md`. Version 2.0.1 moves the plugin to the GNU General Public License, version 3, and replaces readme.html with this guide, opened from the ReadMe button in Plugin Manager.
+See `CHANGELOG.md`. Version 2.0.1 replaces readme.html with this guide, opened from the ReadMe button in Plugin Manager.
 
 ## License
 
-Product Description Pop-Ups is free software under the GNU General Public License, version 3 (https://www.gnu.org/licenses/gpl-3.0.html); the full text is in `LICENSE`. Copyright © 2026 My Zen Cart Host (dbltoe).
+Product Description Pop-Ups is free software under the GNU General Public License, version 2 (https://www.gnu.org/licenses/old-licenses/gpl-2.0.html); the full text is in `LICENSE`. Copyright © 2026 My Zen Cart Host (dbltoe).

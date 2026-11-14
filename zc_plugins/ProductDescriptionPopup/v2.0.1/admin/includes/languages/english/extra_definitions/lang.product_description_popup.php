@@ -3,7 +3,7 @@
  * Product Description Pop-Ups -- admin language strings.
  *
  * @package  ProductDescriptionPopup
- * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
+ * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License v2.0
  */
 $define = [
     // The choice added to the editor's link dialog (CKEditor 5 switch, TinyMCE Class list).
